@@ -22,9 +22,14 @@ const company = {
     this.curEmployee++;
     return returnValue;
   },
+  getEmployee:function * employeeGenerator(){
+    const currentEmployee = 0;
+    while(currentEmployee < this.employees.length){
+        yield(this.employees[currentEmployee]);
+    }
+  }
 };
 
-console.log(company.next());
-console.log(company.next());
-console.log(company.next());
-console.log(company.next());
+console.log(company.getEmployee().next());
+
+
